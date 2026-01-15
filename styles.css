@@ -1,0 +1,177 @@
+:root{
+  --bg:#0b1220;
+  --card:#111a2e;
+  --muted:#93a4c7;
+  --text:#e7eefc;
+  --accent:#6aa8ff;
+  --good:#38d39f;
+  --warn:#ffcc66;
+  --bad:#ff6b6b;
+  --border:rgba(255,255,255,.08);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color:var(--text);
+  background: radial-gradient(1200px 700px at 15% 10%, rgba(106,168,255,.18), transparent 55%),
+              radial-gradient(900px 600px at 85% 20%, rgba(56,211,159,.12), transparent 55%),
+              var(--bg);
+}
+
+.topbar{
+  padding:18px 18px 10px;
+  border-bottom:1px solid var(--border);
+  background: rgba(9,14,26,.55);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.logo{
+  width:46px;height:46px;
+  display:grid;place-items:center;
+  border:1px solid var(--border);
+  border-radius:14px;
+  font-weight:800;
+  color: var(--accent);
+  background: rgba(255,255,255,.03);
+}
+
+h1{margin:0;font-size:18px}
+.subtitle{margin:2px 0 0;color:var(--muted);font-size:12px}
+
+.nav{
+  margin-top:12px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.tab{
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  padding:10px 12px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.tab.active{
+  border-color: rgba(106,168,255,.55);
+  background: rgba(106,168,255,.12);
+}
+
+.container{max-width:1050px;margin:18px auto;padding:0 16px 40px}
+
+.card{
+  border:1px solid var(--border);
+  background: rgba(17,26,46,.78);
+  border-radius:18px;
+  padding:18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.28);
+}
+
+.view.hidden{display:none}
+
+.row{display:flex;align-items:center;gap:12px}
+.spacer{flex:1}
+
+.input{
+  width:min(420px,100%);
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background: rgba(0,0,0,.18);
+  color: var(--text);
+  outline:none;
+}
+
+.btn{
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  color:var(--text);
+  cursor:pointer;
+  font-weight:700;
+}
+.btn.primary{border-color: rgba(106,168,255,.65); background: rgba(106,168,255,.12)}
+.btn.danger{border-color: rgba(255,107,107,.65); background: rgba(255,107,107,.12)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px}
+@media (max-width: 900px){
+  .grid2,.grid3{grid-template-columns:1fr}
+}
+
+.panel{
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.02);
+  border-radius:16px;
+  padding:14px;
+}
+
+.list{display:grid;gap:10px;margin-top:12px}
+.item{
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:12px;
+  background: rgba(0,0,0,.12);
+}
+.item h3{margin:0 0 6px;font-size:15px}
+.item p{margin:0;color:var(--muted);line-height:1.35}
+
+.case{
+  margin-top:12px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:14px;
+  background: rgba(0,0,0,.12);
+}
+.case h3{margin:0 0 6px}
+.case .meta{color:var(--muted);font-size:12px;margin-bottom:8px}
+
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.choice{
+  flex: 1 1 240px;
+  text-align:left;
+  padding:12px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  cursor:pointer;
+  font-weight:700;
+}
+
+.feedback{
+  margin-top:12px;
+  padding:12px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background: rgba(0,0,0,.12);
+  min-height: 48px;
+}
+.feedback.good{border-color: rgba(56,211,159,.55)}
+.feedback.warn{border-color: rgba(255,204,102,.55)}
+.feedback.bad{border-color: rgba(255,107,107,.55)}
+
+.quiz{
+  margin-top:12px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:14px;
+  background: rgba(0,0,0,.12);
+}
+
+.mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12px; color: var(--muted)}
+.footer{padding:20px 16px;color:var(--muted);text-align:center}

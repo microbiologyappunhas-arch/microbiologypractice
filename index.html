@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Microbiology Practice Lab</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">μLab</div>
+      <div>
+        <h1>Microbiology Practice Lab</h1>
+        <p class="subtitle">Aplikasi interaktif virtual untuk latihan mikrobiologi klinik (S1 Kedokteran)</p>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <button class="tab active" data-view="home">Home</button>
+      <button class="tab" data-view="learn">Learn</button>
+      <button class="tab" data-view="cases">Cases</button>
+      <button class="tab" data-view="quiz">Quiz</button>
+      <button class="tab" data-view="lab">Virtual Lab</button>
+      <button class="tab" data-view="progress">Progress</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HOME -->
+    <section class="view" id="view-home">
+      <div class="card">
+        <h2>Tujuan</h2>
+        <ul>
+          <li>Melatih pengambilan keputusan pemeriksaan mikrobiologi klinik berbasis skenario.</li>
+          <li>Memperkuat konsep dasar: pewarnaan, kultur, identifikasi, dan AST.</li>
+          <li>Memberikan umpan balik instan dan menyimpan progres belajar secara lokal.</li>
+        </ul>
+        <div class="grid2">
+          <div class="panel">
+            <h3>Mulai cepat</h3>
+            <ol>
+              <li>Buka <b>Learn</b> untuk ringkasan konsep.</li>
+              <li>Lanjutkan ke <b>Cases</b> untuk latihan berbasis vignette.</li>
+              <li>Uji diri di <b>Quiz</b>, lalu coba simulasi di <b>Virtual Lab</b>.</li>
+            </ol>
+          </div>
+          <div class="panel">
+            <h3>Catatan</h3>
+            <p>
+              Versi ini <b>offline-first</b> (tanpa server). Semua data progres disimpan di browser Anda menggunakan
+              <code>localStorage</code>. Cocok untuk GitHub Pages.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEARN -->
+    <section class="view hidden" id="view-learn">
+      <div class="card">
+        <div class="row">
+          <h2>Learn</h2>
+          <div class="spacer"></div>
+          <input id="learnSearch" class="input" type="search" placeholder="Cari topik (mis. Gram, AST, kultur)..." />
+        </div>
+        <div id="learnList" class="list"></div>
+      </div>
+    </section>
+
+    <!-- CASES -->
+    <section class="view hidden" id="view-cases">
+      <div class="card">
+        <div class="row">
+          <h2>Cases</h2>
+          <div class="spacer"></div>
+          <select id="caseSelect" class="input"></select>
+        </div>
+
+        <div id="caseCard" class="case"></div>
+        <div id="caseActions" class="actions"></div>
+        <div id="caseFeedback" class="feedback"></div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="view hidden" id="view-quiz">
+      <div class="card">
+        <div class="row">
+          <h2>Quiz</h2>
+          <div class="spacer"></div>
+          <button id="quizStart" class="btn primary">Mulai Quiz</button>
+          <button id="quizReset" class="btn">Reset</button>
+        </div>
+
+        <div id="quizBox" class="quiz"></div>
+      </div>
+    </section>
+
+    <!-- VIRTUAL LAB -->
+    <section class="view hidden" id="view-lab">
+      <div class="card">
+        <div class="row">
+          <h2>Virtual Lab: Gram Stain Simulation</h2>
+          <div class="spacer"></div>
+          <button id="labRestart" class="btn">Restart</button>
+        </div>
+
+        <div id="labBox" class="lab"></div>
+      </div>
+    </section>
+
+    <!-- PROGRESS -->
+    <section class="view hidden" id="view-progress">
+      <div class="card">
+        <div class="row">
+          <h2>Progress</h2>
+          <div class="spacer"></div>
+          <button id="wipeProgress" class="btn danger">Hapus Progress Lokal</button>
+        </div>
+
+        <div class="grid3">
+          <div class="panel">
+            <h3>Ringkasan</h3>
+            <div id="progressSummary" class="mono"></div>
+          </div>
+          <div class="panel">
+            <h3>Riwayat Quiz</h3>
+            <div id="progressQuiz" class="mono"></div>
+          </div>
+          <div class="panel">
+            <h3>Cases Diselesaikan</h3>
+            <div id="progressCases" class="mono"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Microbiology Practice Lab — versi demo untuk GitHub Pages.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
